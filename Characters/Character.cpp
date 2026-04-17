@@ -1,5 +1,7 @@
 ﻿#include "Character.h"
 
+#include <iostream>
+
 Character::Character() {
     name = "CHARACTER NAME";
     maxHealth = 200;
@@ -13,7 +15,7 @@ Character::Character(const string &CharacterName, const int currHealth, const in
 }
 
 void Character::attack(Character& target) {
-    // opponent is the character you are attacking
+
 }
 
 int Character::takeDamage(const int damage) {
