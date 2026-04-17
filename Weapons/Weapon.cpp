@@ -1,5 +1,11 @@
-﻿//
-// Created by Madison_PC on 4/17/2026.
-//
+﻿#include "Weapon.h"
 
-#include "Weapon.h"
+Weapon::Weapon() {
+    weaponName = "WEAPON NAME";
+    damageModifier = 1;
+}
+
+Weapon::Weapon(const string &weaponName, const int damageModifier) {
+    this->weaponName = weaponName;
+    this->damageModifier = damageModifier;
+}
