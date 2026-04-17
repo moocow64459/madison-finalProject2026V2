@@ -8,7 +8,7 @@ Player::Player() {
 }
 
 void Player::attack(Character& target) {
-    cout << "Target Health: " << target.getHealth();
+    cout << "Target Health: " << target.getHealth() << endl;
     target.takeDamage(target.getHealth() / 10);
-    cout << "Hit! Target Health: " << target.getHealth();
+    cout << "Hit! Target Health: " << target.getHealth() << endl;
 }
