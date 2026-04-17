@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// REMINDER non-virtual = same behavior every time in all derived classes
 class Character {
 private:
     string name;
@@ -15,7 +16,9 @@ public:
     Character();
     Character(const string&, int, int);
 
-    void attack(const Character&);
+    virtual ~Character() = default;
+
+    virtual void attack(Character&) = 0;  // pure virtual = must implement
     int takeDamage(int);
 
     int getHealth() const;

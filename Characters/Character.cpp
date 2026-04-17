@@ -12,7 +12,7 @@ Character::Character(const string &CharacterName, const int currHealth, const in
     maxHealth = max;
 }
 
-void Character::attack(const Character& opponent) {
+void Character::attack(Character& target) {
     // opponent is the character you are attacking
 }
 
