@@ -5,7 +5,7 @@
 
 class Player: public Character{
 private:
-    int numberOfHits = getMaxHealth() / 15;
+    int numberOfHits = getMaxHealth() / 20;
 public:
     using Character::Character;
     Player();
