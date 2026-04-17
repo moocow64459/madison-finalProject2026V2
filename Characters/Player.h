@@ -1,24 +1,13 @@
 ﻿#ifndef PLAYER_H
 #define PLAYER_H
+
 #include <string>
+#include "Character.h"
 
-using namespace std;
-
-class Player {
-private:
-    string name;
-    int currentHealth;
-    int maxHealth;
-
-    void setHealth(int);
+class Player: public Character{
 public:
+    using Character::Character;
     Player();
-    Player(const string&, int, int);
-
-    void attack();
-    int takeDamage(int);
-
-    int getHealth() const;
 };
 
 

@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(madison_finalProject2026V2 main.cpp
         Characters/Player.cpp
-        Characters/Player.h)
+        Characters/Player.h
+        Characters/Character.cpp
+        Characters/Character.h)
