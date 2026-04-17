@@ -34,3 +34,7 @@ void Character::setHealth(const int health) {
 int Character::getHealth() const {
     return currentHealth;
 }
+
+int Character::getMaxHealth() const {
+    return maxHealth;
+}
