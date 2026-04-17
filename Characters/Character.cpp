@@ -24,7 +24,15 @@ int Character::takeDamage(const int damage) {
 }
 
 void Character::setHealth(const int health) {
-    currentHealth = health;
+    if (health >= maxHealth) {
+        currentHealth = maxHealth;
+    }
+    if (health < 0) {
+        currentHealth = 0;
+    }
+    else {
+        currentHealth = health;
+    }
 }
 
 int Character::getHealth() const {
