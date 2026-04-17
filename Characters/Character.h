@@ -18,7 +18,7 @@ public:
 
     virtual ~Character() = default;
 
-    virtual void attack(Character&) = 0;  // pure virtual = must implement
+    virtual void attack(Character&, int) = 0;  // pure virtual = must implement
     int takeDamage(int);
 
     int getHealth() const;

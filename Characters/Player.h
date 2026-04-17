@@ -4,13 +4,11 @@
 #include "Character.h"
 
 class Player: public Character{
-private:
-    int numberOfHits = 10;
 public:
     using Character::Character;
     Player();
 
-    void attack(Character &) override;
+    void attack(Character &, int) override;
 };
 
 
