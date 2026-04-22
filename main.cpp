@@ -5,7 +5,7 @@
 
 
 int main() {
-    // at 300 health, number of hits is 12 with no weapon modifier
+
     Player player1("Madison", 300, 300, new Fists());
     Player player2("Gene", 300, 300, new Fists());
 
