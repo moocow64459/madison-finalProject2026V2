@@ -9,4 +9,6 @@ add_executable(madison_finalProject2026V2 main.cpp
         Characters/Character.cpp
         Characters/Character.h
         Weapons/Weapon.cpp
-        Weapons/Weapon.h)
+        Weapons/Weapon.h
+        Weapons/Fists.cpp
+        Weapons/Fists.h)
