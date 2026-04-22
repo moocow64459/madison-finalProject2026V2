@@ -1,7 +1,5 @@
 ﻿#include "Weapon.h"
 
-#include "../Characters/Character.h"
-
 Weapon::Weapon() {
     weaponName = "WEAPON NAME";
 }
