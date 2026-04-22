@@ -10,8 +10,19 @@ int main()
     sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
 
     // ------------------------- LOAD --------------------------------
-    sf::Texture playerTexture("Assets/Player/Textures/spritesheet.png");
+    sf::Texture playerTexture;
+
+    if (!playerTexture.loadFromFile("Assets/Player/Textures/spritesheet.png")) {
+        std::cerr << "ERROR: COULD NOT LOAD FILE:: Assets/Player/Textures/spritesheet.png" << std::endl;
+        return -1;
+    }
     sf::Sprite playerSprite(playerTexture);
+
+    playerSprite.setTextureRect(sf::IntRect({{448, 0}, {64, 64}}));
+    playerSprite.setOrigin({32,32});
+    playerSprite.setPosition({100, 100});
+
+    playerSprite.setScale({5, 5});
 
     // Start the game loop
     while (window.isOpen())
