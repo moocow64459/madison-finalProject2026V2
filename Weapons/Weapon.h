@@ -1,24 +1,24 @@
 ﻿#ifndef WEAPON_H
 #define WEAPON_H
 #include <string>
-#include <utility>
 
 using namespace std;
+
+class Character;
+
 class Weapon {
 private:
     string weaponName;
-    int damageModifier;
-    // TODO - when blocking is implemented
-    // int blockModifier;
-    void setName(string);
-    void setDamageModifier(int);
+    void setName(const string&);
 
 public:
     Weapon();
-    Weapon(const string &, int);
+    Weapon(const string &);
 
-    string getName();
-    int getDamageModifier();
+    virtual void attack(Character&) = 0;
+    virtual void defend() = 0;
+
+    string getName() const;
 };
 
 

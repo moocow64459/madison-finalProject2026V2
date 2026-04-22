@@ -6,23 +6,23 @@ using namespace std;
 
 // REMINDER non-virtual = same behavior every time in all derived classes
 class Character {
-private:
+protected:
     string name;
     int currentHealth;
     int maxHealth;
 
-    void setHealth(int);
 public:
     Character();
     Character(const string&, int, int);
 
     virtual ~Character() = default;
 
-    virtual void attack(Character&) = 0;  // pure virtual = must implement
-    int takeDamage(int);
+    virtual int takeDamage(int) = 0;
 
     int getHealth() const;
     int getMaxHealth() const;
+
+    void setHealth(int);
 };
 
 

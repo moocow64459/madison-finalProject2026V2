@@ -14,11 +14,6 @@ Character::Character(const string &CharacterName, const int currHealth, const in
     maxHealth = max;
 }
 
-int Character::takeDamage(const int damage) {
-    setHealth(currentHealth -= damage);
-    return getHealth();
-}
-
 void Character::setHealth(const int health) {
     if (health >= maxHealth) {
         currentHealth = maxHealth;

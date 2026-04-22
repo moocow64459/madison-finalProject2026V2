@@ -1,11 +1,19 @@
 ﻿#include "Weapon.h"
 
+#include "../Characters/Character.h"
+
 Weapon::Weapon() {
     weaponName = "WEAPON NAME";
-    damageModifier = 1;
 }
 
-Weapon::Weapon(const string &weaponName, const int damageModifier) {
+Weapon::Weapon(const string &weaponName) {
     this->weaponName = weaponName;
-    this->damageModifier = damageModifier;
+}
+
+string Weapon::getName() const {
+    return weaponName;
+}
+
+void Weapon::setName(const string &name) {
+    weaponName = name;
 }
