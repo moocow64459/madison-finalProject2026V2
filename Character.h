@@ -27,7 +27,7 @@ public:
 
     void setHealth(int);
 
-    bool operator==(const Character * character) const;
+    bool operator!=(const Character& other) const;
 };
 
 
