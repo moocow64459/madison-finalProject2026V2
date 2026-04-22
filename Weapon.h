@@ -2,9 +2,9 @@
 #define WEAPON_H
 #include <string>
 
-using namespace std;
+#include "Character.h"
 
-class Character;
+using namespace std;
 
 class Weapon {
 private:

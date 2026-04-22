@@ -1,6 +1,6 @@
 ﻿#ifndef FISTS_H
 #define FISTS_H
-#include "Weapon.h"
+#include "../Weapon.h"
 
 
 class Fists : public Weapon {

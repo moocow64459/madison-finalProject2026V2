@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "Characters/Player.h"
-#include "Weapons/Weapon.h"
+#include "Weapon.h"
 
 
 int main() {

@@ -1,6 +1,7 @@
 ﻿#ifndef CHARACTER_H
 #define CHARACTER_H
 #include <string>
+#include "Weapon.h"
 
 using namespace std;
 
