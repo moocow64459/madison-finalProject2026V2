@@ -1,16 +1,19 @@
 ﻿#include "Character.h"
 #include <iostream>
+#include "Weapons/Fists.h"
 
 Character::Character() {
     name = "CHARACTER NAME";
     maxHealth = 200;
     currentHealth = maxHealth;
+    weapon = new Fists();
 }
 
-Character::Character(const string &CharacterName, const int currHealth, const int max) {
+Character::Character(const string &CharacterName, const int currHealth, const int max, Weapon* weaponType) {
     name = CharacterName;
     currentHealth = currHealth;
     maxHealth = max;
+    weapon = weaponType;
 }
 
 Character::~Character() {

@@ -15,7 +15,7 @@ protected:
     Weapon* weapon;
 public:
     Character();
-    Character(const string&, int, int);
+    Character(const string&, int, int, Weapon*);
 
     virtual ~Character();
 

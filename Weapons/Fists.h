@@ -5,6 +5,8 @@
 
 class Fists : public Weapon {
 public:
+    Fists() : Weapon("Fists") {}
+
     void attack(Character &) override;
     void defend() override;
 };

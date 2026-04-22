@@ -13,10 +13,10 @@ private:
     void setName(const string&);
 
 public:
-    virtual ~Weapon() = default;
-
     Weapon();
     Weapon(const string &);
+
+    virtual ~Weapon() = default;
 
     virtual void attack(Character&) = 0;
     virtual void defend() = 0;
