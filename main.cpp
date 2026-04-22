@@ -1,4 +1,5 @@
-﻿#include <SFML/Audio.hpp>
+﻿#include <iostream>
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -8,8 +9,9 @@ int main()
     // Create the main window
     sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
 
-    sf::Texture texture("assets/characterV2.png");
-    sf::Sprite sprite(texture);
+    // ------------------------- LOAD --------------------------------
+    sf::Texture playerTexture("Assets/Player/Textures/spritesheet.png");
+    sf::Sprite playerSprite(playerTexture);
 
     // Start the game loop
     while (window.isOpen())
@@ -25,7 +27,7 @@ int main()
         // Clear screen
         window.clear();
 
-        window.draw(sprite);
+        window.draw(playerSprite);
 
         // Update the window
         window.display();
