@@ -1,7 +1,10 @@
 ﻿#include "Fists.h"
 
+#include "../Character.h"
+
 void Fists::attack(Character &target) {
     // this is where the weapon will deal damage
+    target.takeDamage(fistsDamage);
 }
 
 void Fists::defend() {

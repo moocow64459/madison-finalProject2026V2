@@ -4,6 +4,8 @@
 
 
 class Fists : public Weapon {
+private:
+    int fistsDamage = 5;
 public:
     Fists() : Weapon("Fists") {}
 
