@@ -19,6 +19,7 @@ public:
 
     virtual ~Character();
 
+    void attack(Character& target) const;
     virtual int takeDamage(int) = 0;
 
     int getHealth() const;

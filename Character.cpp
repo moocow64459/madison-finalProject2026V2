@@ -20,6 +20,11 @@ Character::~Character() {
     delete weapon;
 }
 
+// character owns action, weapon defines behavior
+void Character::attack(Character &target) const {
+    weapon->attack(target);
+}
+
 void Character::setHealth(const int health) {
     if (health >= maxHealth) {
         currentHealth = maxHealth;
