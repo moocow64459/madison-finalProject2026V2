@@ -3,7 +3,6 @@
 #include "Weapon.h"
 #include "Weapons/Fists.h"
 
-
 int main() {
 
     Player player1("Madison", 300, 300, new Fists());
