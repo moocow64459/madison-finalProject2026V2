@@ -12,6 +12,8 @@ private:
     void setName(const string&);
 
 public:
+    virtual ~Weapon() = default;
+
     Weapon();
     Weapon(const string &);
 
