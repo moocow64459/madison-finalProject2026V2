@@ -4,13 +4,11 @@
 #include "Character.h"
 
 class Player: public Character{
-private:
-    int numberOfHits = getMaxHealth() / 20;
 public:
     using Character::Character;
     Player();
 
-    void attack(Character &) override;
+    int takeDamage(int) override;
 };
 
 

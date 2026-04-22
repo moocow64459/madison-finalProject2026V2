@@ -5,6 +5,7 @@ Player::Player() {
     // custom constructor
 }
 
-void Player::attack(Character& target) {
-    target.takeDamage(numberOfHits);
+int Player::takeDamage(const int damage) {
+    setHealth(currentHealth -= damage);
+    return getHealth();
 }
