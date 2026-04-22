@@ -3,10 +3,12 @@
 
 int main()
 {
-    // Create the main window
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
-    sf::Texture texture;
+    // Create the main window
+    sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
+
+    sf::Texture texture("assets/characterV2.png");
     sf::Sprite sprite(texture);
 
     // Start the game loop
