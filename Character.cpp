@@ -22,7 +22,17 @@ Character::~Character() {
 
 // character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
-    weapon->attack(target);
+    if (this != target) {
+        weapon->attack(target);
+    }
+}
+
+int Character::getHealth() const {
+    return currentHealth;
+}
+
+int Character::getMaxHealth() const {
+    return maxHealth;
 }
 
 void Character::setHealth(const int health) {
@@ -37,10 +47,6 @@ void Character::setHealth(const int health) {
     }
 }
 
-int Character::getHealth() const {
-    return currentHealth;
-}
-
-int Character::getMaxHealth() const {
-    return maxHealth;
+bool Character::operator==(const Character *character) const {
+    return this == character;
 }

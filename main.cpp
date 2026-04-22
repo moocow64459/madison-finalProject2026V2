@@ -9,7 +9,10 @@ int main() {
     Player player1("Madison", 300, 300, new Fists());
     Player player2("Gene", 300, 300, new Fists());
 
-    player1.attack(player2);
+    cout << "Player 1 Health: " << player1.getHealth() << endl;
+    cout << "Player 2 Health: " << player2.getHealth() << endl;
+
+    player2.attack(player2);
 
     cout << "Player 1 Health: " << player1.getHealth() << endl;
     cout << "Player 2 Health: " << player2.getHealth() << endl;

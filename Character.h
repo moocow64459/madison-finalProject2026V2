@@ -26,6 +26,8 @@ public:
     int getMaxHealth() const;
 
     void setHealth(int);
+
+    bool operator==(const Character * character) const;
 };
 
 
