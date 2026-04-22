@@ -19,7 +19,8 @@ public:
     virtual ~Weapon() = default;
 
     virtual void attack(Character&) = 0;
-    virtual void defend() = 0;
+
+    static int randomDamage(int, int);
 
     string getName() const;
 };
