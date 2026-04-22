@@ -1,12 +1,7 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.20)
 project(madison_finalProject2026V2)
 
-include(FetchContent)
-set(BUILD_SHARED_LIBS OFF)
-FetchContent_Declare(SFML GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 3.1.0)
-FetchContent_MakeAvailable(SFML)
-
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(madison_finalProject2026V2 main.cpp
         Characters/Player.cpp
@@ -19,4 +14,11 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapons/Fists.h
         Weapons/ShortSword.cpp)
 
-target_link_libraries(madison_finalProject2026V2 sfml-graphics)
+# SFML (installed via vcpkg)
+find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System)
+
+target_link_libraries(madison_finalProject2026V2 PRIVATE
+        SFML::Graphics
+        SFML::Window
+        SFML::System
+)

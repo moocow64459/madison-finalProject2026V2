@@ -1,27 +1,31 @@
-﻿#include <iostream>
-#include "Characters/Player.h"
-#include "Weapon.h"
-#include "Weapons/Fists.h"
+﻿#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 
-int main() {
+int main()
+{
+    // Create the main window
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
-    Player player1("Madison", 300, 300, new Fists());
-    Player player2("Gene", 300, 300, new Fists());
+    sf::Texture texture;
+    sf::Sprite sprite(texture);
 
-    cout << "Player 1 Health: " << player1.getHealth() << endl;
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    // Start the game loop
+    while (window.isOpen())
+    {
+        // Process events
+        while (const std::optional event = window.pollEvent())
+        {
+            // Close window: exit
+            if (event->is<sf::Event::Closed>())
+                window.close();
+        }
 
-    cout << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    cout << endl;
+        // Clear screen
+        window.clear();
 
-    cout << "Player 1 Health: " << player1.getHealth() << endl;
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
+        window.draw(sprite);
 
-    return 0;
+        // Update the window
+        window.display();
+    }
 }
