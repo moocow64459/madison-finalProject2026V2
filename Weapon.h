@@ -2,7 +2,8 @@
 #define WEAPON_H
 #include <string>
 
-#include "Character.h"
+// did we learn about forward declaration?
+class Character;
 
 using namespace std;
 

@@ -13,6 +13,10 @@ Character::Character(const string &CharacterName, const int currHealth, const in
     maxHealth = max;
 }
 
+Character::~Character() {
+    delete weapon;
+}
+
 void Character::setHealth(const int health) {
     if (health >= maxHealth) {
         currentHealth = maxHealth;

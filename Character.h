@@ -12,11 +12,12 @@ protected:
     int currentHealth;
     int maxHealth;
 
+    Weapon* weapon;
 public:
     Character();
     Character(const string&, int, int);
 
-    virtual ~Character() = default;
+    virtual ~Character();
 
     virtual int takeDamage(int) = 0;
 
