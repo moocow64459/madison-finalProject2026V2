@@ -5,12 +5,13 @@
 
 class Fists : public Weapon {
 private:
-    int fistsDamage = 5;
+    int fistsDamageMin = 3;
+    int fistsDamageMax = 7;
 public:
     Fists() : Weapon("Fists") {}
 
     void attack(Character &) override;
-    void defend() override;
+
 };
 
 

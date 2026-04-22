@@ -12,7 +12,14 @@ int main() {
     cout << "Player 1 Health: " << player1.getHealth() << endl;
     cout << "Player 2 Health: " << player2.getHealth() << endl;
 
-    player2.attack(player2);
+    cout << endl;
+    player1.attack(player2);
+    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    player1.attack(player2);
+    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    player1.attack(player2);
+    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    cout << endl;
 
     cout << "Player 1 Health: " << player1.getHealth() << endl;
     cout << "Player 2 Health: " << player2.getHealth() << endl;
