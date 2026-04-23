@@ -12,7 +12,9 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapon.h
         Weapons/Fists.cpp
         Weapons/Fists.h
-        Weapons/ShortSword.cpp)
+        Weapons/ShortSword.cpp
+        Button.cpp
+        Button.h)
 
 # SFML (installed via vcpkg)
 find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System)
