@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <SFML/Audio.hpp>
+#include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -9,14 +9,19 @@ int main()
     // Create the main window
     sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
 
+    //window.setIcon();
     window.setPosition(sf::Vector2i(-10,0));
 
-    sf::Font pixelFont("Assets/Fonts/PublicPixel.ttf");
-    sf::Text text(pixelFont);
-    text.setCharacterSize(50);
-    text.setFillColor(sf::Color::White);
+    // Music
+    sf::Music menuMusic("Assets/pixelmist.flac");
+    menuMusic.setVolume(50);
+    menuMusic.setLooping(true);
+    menuMusic.play();
 
-    text.setString("Hello world");
+    // Button
+    sf::RectangleShape button(sf::Vector2f(200, 60));
+    button.setPosition({300, 250});
+    button.setFillColor(sf::Color::Blue);
 
     // Start the game loop
     while (window.isOpen())
@@ -32,7 +37,7 @@ int main()
         // Clear screen
         window.clear();
 
-        window.draw(text);
+        window.draw(button);
 
         // Update the window
         window.display();

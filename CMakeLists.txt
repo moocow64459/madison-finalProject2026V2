@@ -15,10 +15,11 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapons/ShortSword.cpp)
 
 # SFML (installed via vcpkg)
-find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System)
+find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System Audio)
 
 target_link_libraries(madison_finalProject2026V2 PRIVATE
         SFML::Graphics
         SFML::Window
         SFML::System
+        SFML::Audio
 )
