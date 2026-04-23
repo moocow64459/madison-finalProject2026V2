@@ -14,14 +14,14 @@ int main()
 
     // Music
     sf::Music menuMusic("Assets/MainMenu/pixelmist.flac");
-    menuMusic.setVolume(50);
+    menuMusic.setVolume(35);
     menuMusic.setLooping(true);
     menuMusic.play();
 
     // Background
-    sf::RectangleShape rect(sf::Vector2f(window.getSize().x, window.getSize().y));
-    sf::Texture background("Assets/MainMenu/darknight.png");
-    rect.setTexture(&background);
+    sf::RectangleShape background(sf::Vector2f(window.getSize().x, window.getSize().y));
+    sf::Texture backgroundTexture("Assets/MainMenu/darknight.png");
+    background.setTexture(&backgroundTexture);
 
     // Button
     sf::RectangleShape button(sf::Vector2f(200, 60));
@@ -42,7 +42,7 @@ int main()
         // Clear screen
         window.clear();
 
-        window.draw(rect);
+        window.draw(background);
 
         // Update the window
         window.display();
