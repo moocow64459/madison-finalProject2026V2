@@ -9,20 +9,14 @@ int main()
     // Create the main window
     sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
 
-    // ------------------------- LOAD --------------------------------
-    sf::Texture playerTexture;
+    window.setPosition(sf::Vector2i(-10,0));
 
-    if (!playerTexture.loadFromFile("Assets/Player/Textures/spritesheet.png")) {
-        std::cerr << "ERROR: COULD NOT LOAD FILE:: Assets/Player/Textures/spritesheet.png" << std::endl;
-        return -1;
-    }
-    sf::Sprite playerSprite(playerTexture);
+    sf::Font pixelFont("Assets/Fonts/PublicPixel.ttf");
+    sf::Text text(pixelFont);
+    text.setCharacterSize(50);
+    text.setFillColor(sf::Color::White);
 
-    playerSprite.setTextureRect(sf::IntRect({{448, 0}, {64, 64}}));
-    playerSprite.setOrigin({32,32});
-    playerSprite.setPosition({100, 100});
-
-    playerSprite.setScale({5, 5});
+    text.setString("Hello world");
 
     // Start the game loop
     while (window.isOpen())
@@ -32,13 +26,13 @@ int main()
         {
             // Close window: exit
             if (event->is<sf::Event::Closed>())
-                window.close();
+               window.close();
         }
 
         // Clear screen
         window.clear();
 
-        window.draw(playerSprite);
+        window.draw(text);
 
         // Update the window
         window.display();
