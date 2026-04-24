@@ -20,7 +20,7 @@ int main()
 
     // Background
     sf::RectangleShape background(sf::Vector2f(window.getSize().x, window.getSize().y));
-    sf::Texture backgroundTexture("Assets/MainMenu/darknight.png");
+    sf::Texture backgroundTexture("Assets/MainMenu/dark_night.png");
     background.setTexture(&backgroundTexture);
 
 
@@ -28,6 +28,7 @@ int main()
     sf::RectangleShape button(sf::Vector2f(512, 108));
     button.setOrigin({256, 54});
     button.setPosition({960, 544});
+
 
     // Start the game loop
     while (window.isOpen())
