@@ -12,9 +12,9 @@ public:
     Button();
     static void setButtonText(const std::string&);
 
-    bool buttonClicked(sf::Vector2f, const sf::RectangleShape &);
+    static void buttonClicked(sf::Vector2f, const sf::RectangleShape&);
 
-    sf::Vector2f getMouseVector2f(const sf::Window&) const;
+    friend bool operator==(const sf::Window&, const sf::RectangleShape&);
 };
 
 
