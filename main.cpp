@@ -23,10 +23,11 @@ int main()
     sf::Texture backgroundTexture("Assets/MainMenu/darknight.png");
     background.setTexture(&backgroundTexture);
 
+
     // Button
-    sf::RectangleShape button(sf::Vector2f(200, 60));
-    button.setPosition({300, 250});
-    button.setFillColor(sf::Color::Blue);
+    sf::RectangleShape button(sf::Vector2f(512, 108));
+    button.setOrigin({256, 54});
+    button.setPosition({960, 544});
 
     // Start the game loop
     while (window.isOpen())
@@ -43,6 +44,7 @@ int main()
         window.clear();
 
         window.draw(background);
+        window.draw(button);
 
         // Update the window
         window.display();
