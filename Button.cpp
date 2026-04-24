@@ -16,33 +16,21 @@ void Button::setButtonText(const std::string&) {
     //sf::Text text()
 }
 
-void Button::buttonClicked(const sf::Vector2f mousePosition, const sf::RectangleShape &button) {
-    sf::Font font("Assets/Fonts/PublicPixel.ttf");
-    sf::Text text(font);
+bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
+    if (const auto* mouseEvent = event.getIf<sf::Event::MouseButtonPressed>()) {
 
-    if (mousePosition == button.getPosition()) {
-        text.setString("You did it");
+        if (mouseEvent->button == sf::Mouse::Button::Left) {
+
+            const float posX = static_cast<float>(sf::Mouse::getPosition(window).x);
+            const float posY = static_cast<float>(sf::Mouse::getPosition(window).y);
+
+            if (shape.getGlobalBounds().contains({posX, posY})) {
+                std::cout << "Clicked\n";
+                return true;
+
+            }
+        }
     }
-    else {
-        text.setString("something is wrong");
-    }
-}
 
-bool operator==(const sf::Window &window, const sf::RectangleShape &button) {
-    // is the mouse position == to the button area
-    // get the mouse x 704 <= x <= 1216
-    const float mousePosX = static_cast<float>(sf::Mouse::getPosition(window).x);
-    const float negButtonPosX = button.getOrigin().x - 256;
-    const float posButtonPosX = button.getOrigin().x + 256;
-
-    // get mouse Y 490 <= y <= 598
-    const float posY = static_cast<float>(sf::Mouse::getPosition(window).y);
-    const float negButtonPosY = button.getOrigin().y - 54;
-    const float posButtonPosY = button.getOrigin().y + 54;
-
-    return (mousePosX >= negButtonPosX &&
-        mousePosX <= posButtonPosX &&
-        posY >= negButtonPosY &&
-        posY <= posButtonPosY
-        );
+    return false;
 }

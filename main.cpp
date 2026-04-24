@@ -25,6 +25,7 @@ int main()
     sf::Texture backgroundTexture("Assets/MainMenu/dark_night.png");
     background.setTexture(&backgroundTexture);
 
+    std::cout << "TEST";
     // Start the game loop
     while (window.isOpen())
     {
