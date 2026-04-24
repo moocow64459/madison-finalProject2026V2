@@ -2,6 +2,8 @@
 #include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "Button.h"
+
 int main()
 {
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
@@ -23,16 +25,10 @@ int main()
     sf::Texture backgroundTexture("Assets/MainMenu/dark_night.png");
     background.setTexture(&backgroundTexture);
 
-
-    // Button
-    sf::RectangleShape button(sf::Vector2f(512, 108));
-    button.setOrigin({256, 54});
-    button.setPosition({960, 544});
-
-
     // Start the game loop
     while (window.isOpen())
     {
+        Button button;
         // Process events
         while (const std::optional event = window.pollEvent())
         {
