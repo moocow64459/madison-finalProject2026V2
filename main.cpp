@@ -1,27 +1,56 @@
 ﻿#include <iostream>
-#include "Characters/Player.h"
-#include "Weapon.h"
-#include "Weapons/Fists.h"
+#include <SFML/Audio/Music.hpp>
+#include <SFML/Graphics.hpp>
 
-int main() {
+#include "Button.h"
 
-    Player player1("Madison", 300, 300, new Fists());
-    Player player2("Gene", 300, 300, new Fists());
+int main()
+{
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
-    cout << "Player 1 Health: " << player1.getHealth() << endl;
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    // Create the main window
+    sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
 
-    cout << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    player1.attack(player2);
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
-    cout << endl;
+    //window.setIcon();
+    window.setPosition(sf::Vector2i(-10,0));
 
-    cout << "Player 1 Health: " << player1.getHealth() << endl;
-    cout << "Player 2 Health: " << player2.getHealth() << endl;
+    // Music
+    sf::Music menuMusic("Assets/MainMenu/pixelmist.flac");
+    menuMusic.setVolume(35);
+    menuMusic.setLooping(true);
+    menuMusic.play();
 
-    return 0;
+    // Background
+    sf::RectangleShape background(sf::Vector2f(window.getSize().x, window.getSize().y));
+    sf::Texture backgroundTexture("Assets/MainMenu/dark_night.png");
+    background.setTexture(&backgroundTexture);
+
+
+    // Start the game loop
+    while (window.isOpen())
+    {
+        Button button1(960, 544);
+        sf::Texture button1_texture("Assets/MainMenu/buttonV1.png");
+        button1.setButtonTexture(button1_texture);
+
+        // Process events
+        while (const std::optional event = window.pollEvent())
+        {
+            // Close window: exit
+            if (event->is<sf::Event::Closed>())
+               window.close();
+            else if (button1.isClicked(*event, window)) {
+                std::cout << "Click!";
+            }
+        }
+
+        // Clear screen
+        window.clear();
+
+        window.draw(background);
+        window.draw(button1);
+
+        // Update the window
+        window.display();
+    }
 }

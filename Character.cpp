@@ -27,7 +27,7 @@ int Character::takeDamage(int damage) {
 
 // character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
-    if (this != target) {
+    if (&target != this) {
         weapon->attack(target);
     }
 }
@@ -52,6 +52,6 @@ void Character::setHealth(const int health) {
     }
 }
 
-bool Character::operator==(const Character *character) const {
-    return this == character;
+bool Character::operator!=(const Character& other) const {
+    return (this != &other);
 }
