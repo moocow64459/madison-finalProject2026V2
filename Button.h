@@ -11,7 +11,7 @@ private:
 
 public:
     Button(float, float);
-    void setButtonText(const std::string&);
+    void setButtonTexture(const sf::Texture&);
 
     bool isClicked(const sf::Event&, const sf::RenderWindow&);
 };

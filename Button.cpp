@@ -12,8 +12,8 @@ Button::Button(float xPos, float yPos) : shape(sf::Vector2f(512, 108)) {
     shape.setFillColor(sf::Color::White);
 }
 
-void Button::setButtonText(const std::string&) {
-    //sf::Text text()
+void Button::setButtonTexture(const sf::Texture &texture) {
+    shape.setTexture(&texture);
 }
 
 bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
