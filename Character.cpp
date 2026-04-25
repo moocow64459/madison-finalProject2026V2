@@ -44,7 +44,7 @@ void Character::setHealth(const int health) {
     if (health >= maxHealth) {
         currentHealth = maxHealth;
     }
-    if (health < 0) {
+    else if (health < 0) {
         currentHealth = 0;
     }
     else {
