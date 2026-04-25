@@ -7,8 +7,6 @@ class Player: public Character{
 public:
     using Character::Character;
     Player();
-
-    int takeDamage(int) override;
 };
 
 

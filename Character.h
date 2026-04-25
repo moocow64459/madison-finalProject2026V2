@@ -20,7 +20,7 @@ public:
     virtual ~Character();
 
     void attack(Character& target) const;
-    virtual int takeDamage(int) = 0;
+    virtual int takeDamage(int);
 
     int getHealth() const;
     int getMaxHealth() const;

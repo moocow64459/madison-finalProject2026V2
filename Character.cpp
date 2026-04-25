@@ -20,7 +20,10 @@ Character::~Character() {
     delete weapon;
 }
 
-bool operator!=(const Character * lhs, const Character & rhs);
+int Character::takeDamage(int damage) {
+    setHealth(currentHealth -= damage);
+    return getHealth();
+}
 
 // character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
