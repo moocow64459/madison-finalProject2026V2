@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.20)
 project(madison_finalProject2026V2)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(madison_finalProject2026V2 main.cpp
         Characters/Player.cpp
@@ -12,4 +12,16 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapon.h
         Weapons/Fists.cpp
         Weapons/Fists.h
-        Weapons/ShortSword.cpp)
+        Weapons/ShortSword.cpp
+        Button.cpp
+        Button.h)
+
+# SFML (installed via vcpkg)
+find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System Audio)
+
+target_link_libraries(madison_finalProject2026V2 PRIVATE
+        SFML::Graphics
+        SFML::Window
+        SFML::System
+        SFML::Audio
+)
