@@ -25,11 +25,13 @@ int main()
     sf::Texture backgroundTexture("Assets/MainMenu/dark_night.png");
     background.setTexture(&backgroundTexture);
 
-    std::cout << "TEST";
+
     // Start the game loop
     while (window.isOpen())
     {
-        Button button(960, 544);
+        Button button1(960, 544);
+        sf::Texture button1_texture("Assets/MainMenu/buttonV1.png");
+        button1.setButtonTexture(button1_texture);
 
         // Process events
         while (const std::optional event = window.pollEvent())
@@ -37,7 +39,7 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                window.close();
-            else if (button.isClicked(*event, window)) {
+            else if (button1.isClicked(*event, window)) {
                 std::cout << "Click!";
             }
         }
@@ -46,7 +48,7 @@ int main()
         window.clear();
 
         window.draw(background);
-        window.draw(button);
+        window.draw(button1);
 
         // Update the window
         window.display();
