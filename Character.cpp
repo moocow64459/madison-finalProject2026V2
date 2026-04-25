@@ -20,6 +20,11 @@ Character::~Character() {
     delete weapon;
 }
 
+int Character::takeDamage(int damage) {
+    setHealth(currentHealth -= damage);
+    return getHealth();
+}
+
 // character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
     if (this != target) {
