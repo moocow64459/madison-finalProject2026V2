@@ -3,7 +3,7 @@
 #include "Enemy.h"
 
 
-class BadGuy : public Enemy{
+class Brute : public Enemy{
     void setSpawnProbability() override;
 };
 
