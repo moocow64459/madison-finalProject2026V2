@@ -16,4 +16,6 @@ add_executable(madison_finalProject2026V2 main.cpp
         Characters/CharacterSpawner.cpp
         Characters/CharacterSpawner.h
         Characters/Enemy.cpp
-        Characters/Enemy.h)
+        Characters/Enemy.h
+        Characters/BadGuy.cpp
+        Characters/BadGuy.h)
