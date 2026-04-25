@@ -10,7 +10,7 @@ private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 public:
     Button();
-    static void setButtonText(const std::string&);
+    void setButtonText(const std::string&);
 
     bool isClicked(const sf::Event&, const sf::RenderWindow&);
 };

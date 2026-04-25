@@ -30,12 +30,16 @@ int main()
     while (window.isOpen())
     {
         Button button;
+
         // Process events
         while (const std::optional event = window.pollEvent())
         {
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                window.close();
+            else if (button.isClicked(*event, window)) {
+                std::cout << "Click!";
+            }
         }
 
         // Clear screen
