@@ -7,9 +7,10 @@ class Button : public sf::Drawable{
 private:
     sf::RectangleShape shape;
 
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
 public:
-    Button();
+    Button(float, float);
     void setButtonText(const std::string&);
 
     bool isClicked(const sf::Event&, const sf::RenderWindow&);

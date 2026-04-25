@@ -29,7 +29,7 @@ int main()
     // Start the game loop
     while (window.isOpen())
     {
-        Button button;
+        Button button(960, 544);
 
         // Process events
         while (const std::optional event = window.pollEvent())

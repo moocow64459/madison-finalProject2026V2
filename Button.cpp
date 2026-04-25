@@ -6,9 +6,9 @@ void Button::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     target.draw(shape, states);
 }
 
-Button::Button() : shape(sf::Vector2f(512, 108)) {
+Button::Button(float xPos, float yPos) : shape(sf::Vector2f(512, 108)) {
     shape.setOrigin({256, 54});
-    shape.setPosition({960, 544});
+    shape.setPosition({xPos, yPos});
     shape.setFillColor(sf::Color::White);
 }
 
