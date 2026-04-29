@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <stdexcept>
 #include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -38,6 +39,7 @@ int main()
     // std::cout << player1;
 
     int exploreCount = 0;
+    bool enemyActive = false;
 
     // Start the game loop
     while (window.isOpen())
@@ -66,18 +68,34 @@ int main()
 
             else if (button1.isClicked(*event, window)) {
                 // explore
-                exploreCount++;
-                if (exploreCount % 3 == 0) {
-                    text.setString("An enemy approaches!");
+                try {
+                    if (enemyActive) {
+                        throw std::logic_error("You cannot explore \nwhile an enemy is in \nfront of you.");
+                    }
+
+                    exploreCount++;
+                    if (exploreCount % 3 == 0) {
+                        enemyActive = true;
+                        text.setString("An enemy approaches!");
+                    }
+                    else {
+                        text.setString("You explore the woods \nin front of you.");
+                    }
                 }
-                else {
-                    text.setString("You explore the woods in front of you.");
+                catch (const std::logic_error& e) {
+                    text.setString(e.what());
                 }
             }
 
             else if (button2.isClicked(*event, window)) {
                 // attack
-                text.setString("Button 2 Pressed.");
+                if (enemyActive) {
+                    enemyActive = false;
+                    text.setString("You attack and defeat the enemy.");
+                }
+                else {
+                    text.setString("There is no enemy to attack.");
+                }
             }
 
             else if (button3.isClicked(*event, window)) {
