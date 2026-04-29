@@ -3,7 +3,9 @@
 
 #include "../Character.h"
 
-class Player: public Character{
+class Player: public Character {
+private:
+    int xp;
 public:
     using Character::Character;
     Player();
