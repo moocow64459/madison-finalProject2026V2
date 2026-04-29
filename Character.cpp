@@ -20,13 +20,14 @@ Character::~Character() {
     delete weapon;
 }
 
+// character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
     if (&target != this) {
         weapon->attack(target);
     }
 }
 
-bool Character::isAlive() const {
+bool Character::isDead() const {
     return currentHealth <= 0;
 }
 
