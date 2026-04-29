@@ -14,7 +14,7 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapons/Fists.h
         Weapons/ShortSword.cpp
         Button.cpp
-        Button.h)
+        Button.h
         Characters/Enemy.cpp
         Characters/Enemy.h)
 
