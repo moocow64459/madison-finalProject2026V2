@@ -20,13 +20,15 @@ Character::~Character() {
     delete weapon;
 }
 
-bool operator!=(const Character * lhs, const Character & rhs);
-
 // character owns action, weapon defines behavior
 void Character::attack(Character &target) const {
-    if (&target != this) {
+    if (&target != this) {      // prevent self attack
         weapon->attack(target);
     }
+}
+
+bool Character::isDead() const {
+    return currentHealth <= 0;
 }
 
 int Character::getHealth() const {
@@ -51,4 +53,10 @@ void Character::setHealth(const int health) {
 
 bool Character::operator!=(const Character& other) const {
     return (this != &other);
+}
+
+std::ostream & operator<<(std::ostream &os, const Character &character) {
+    os << character.name << "'s Character Info: " << endl;
+    os << "Health: " << character.getHealth() << "/ " << character.getMaxHealth() << endl;
+    return os;
 }

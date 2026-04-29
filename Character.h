@@ -21,6 +21,7 @@ public:
 
     void attack(Character& target) const;
     virtual int takeDamage(int) = 0;
+    bool isDead() const;
 
     int getHealth() const;
     int getMaxHealth() const;
@@ -28,6 +29,8 @@ public:
     void setHealth(int);
 
     bool operator!=(const Character& other) const;
+
+    friend std::ostream& operator<<(std::ostream&, const Character&);
 };
 
 

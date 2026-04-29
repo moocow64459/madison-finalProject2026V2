@@ -15,6 +15,8 @@ add_executable(madison_finalProject2026V2 main.cpp
         Weapons/ShortSword.cpp
         Button.cpp
         Button.h)
+        Characters/Enemy.cpp
+        Characters/Enemy.h)
 
 # SFML (installed via vcpkg)
 find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Window System Audio)
