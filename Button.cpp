@@ -18,7 +18,13 @@ void Button::setButtonTexture(const sf::Texture &texture) {
 bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
     if (const auto* mouseButtonPressed = event.getIf<sf::Event::MouseButtonPressed>()) {
         if (mouseButtonPressed->button == sf::Mouse::Button::Left) {
-            return true;
+            sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+            sf::Vector2f mousePosF = window.mapPixelToCoords(mousePos);
+
+            if (shape.getGlobalBounds().contains(mousePosF)) {
+                std::cout << "Click!";
+                return true;
+            }
         }
     }
 }
