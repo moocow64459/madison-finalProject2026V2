@@ -35,8 +35,8 @@ int main()
     sf::Text text(pixelFont);
     text.setCharacterSize(30);
     text.setPosition({700,300});
-    text.setString("Please enter your name.");
-    
+
+    // Player 1
     Player player1("Player 1", 300, 300, new Fists());
     std::ostringstream beginningInfo;
     beginningInfo << "WELCOME.\n"
@@ -52,12 +52,12 @@ int main()
     {
         // Top Button
         Button button1(960, 544);
-        sf::Texture button1_texture("Assets/MainMenu/buttonV1.png");
+        sf::Texture button1_texture("Assets/MainMenu/explore_button.png");
         button1.setButtonTexture(button1_texture);
 
         // Middle Button
         Button button2(960, 686);
-        sf::Texture button2_texture("Assets/MainMenu/buttonV1.png");
+        sf::Texture button2_texture("Assets/MainMenu/attack_button.png");
         button2.setButtonTexture(button2_texture);
 
         // Bottom Button
