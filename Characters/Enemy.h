@@ -6,6 +6,8 @@
 class Enemy : public Character {
     using Character::Character;
     Enemy();
+
+    int takeDamage(int) override;
 };
 
 
