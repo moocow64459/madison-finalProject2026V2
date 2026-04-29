@@ -13,7 +13,7 @@ public:
     Button(float, float);
     void setButtonTexture(const sf::Texture&);
 
-    bool isClicked(const sf::Event&, const sf::RenderWindow&);
+    bool isClicked(const sf::Event&, const sf::RenderWindow&) const;
 };
 
 

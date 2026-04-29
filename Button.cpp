@@ -15,7 +15,7 @@ void Button::setButtonTexture(const sf::Texture &texture) {
     shape.setTexture(&texture);
 }
 
-bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
+bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) const {
     if (const auto* mouseButtonPressed = event.getIf<sf::Event::MouseButtonPressed>()) {
         if (mouseButtonPressed->button == sf::Mouse::Button::Left) {
             sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -26,4 +26,5 @@ bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
             }
         }
     }
+    return false;
 }
