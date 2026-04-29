@@ -30,9 +30,14 @@ int main()
     // Text
     sf::Font pixelFont("Assets/Fonts/PublicPixel.ttf");
     sf::Text text(pixelFont);
+    text.setCharacterSize(30);
+    text.setPosition({700,300});
+    text.setString("Hello.");
 
-    Player player1("Madison", 300, 300, new Fists());
-    std::cout << player1;
+    Player player1("Player 1", 300, 300, new Fists());
+    // std::cout << player1;
+
+    int exploreCount = 0;
 
     // Start the game loop
     while (window.isOpen())
@@ -58,8 +63,26 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                window.close();
+
             else if (button1.isClicked(*event, window)) {
-                std::cout << "Click!";
+                // explore
+                exploreCount++;
+                if (exploreCount % 3 == 0) {
+                    text.setString("An enemy approaches!");
+                }
+                else {
+                    text.setString("You explore the woods in front of you.");
+                }
+            }
+
+            else if (button2.isClicked(*event, window)) {
+                // attack
+                text.setString("Button 2 Pressed.");
+            }
+
+            else if (button3.isClicked(*event, window)) {
+                // change weapon?
+                text.setString("Button 3 Pressed.");
             }
         }
 
@@ -67,6 +90,7 @@ int main()
         window.clear();
 
         window.draw(background);
+        window.draw(text);
         window.draw(button1);
         window.draw(button2);
         window.draw(button3);
