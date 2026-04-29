@@ -10,6 +10,8 @@ public:
     using Character::Character;
     Player();
 
+    int getXP();
+    void setXP(int);
     int takeDamage(int) override;
 };
 
