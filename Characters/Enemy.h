@@ -4,6 +4,7 @@
 #include "../Character.h"
 
 class Enemy : public Character {
+public:
     using Character::Character;
     Enemy();
 
