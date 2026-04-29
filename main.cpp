@@ -14,7 +14,7 @@ int main()
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
     // Create the main window
-    sf::RenderWindow window(desktop, "Final Project WORKING TITLE", sf::Style::Close);
+    sf::RenderWindow window(desktop, "Madison's Final Project", sf::Style::Close);
 
     //window.setIcon();
     window.setPosition(sf::Vector2i(-10,0));
