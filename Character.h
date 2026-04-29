@@ -23,6 +23,7 @@ public:
     virtual int takeDamage(int) = 0;
     bool isDead() const;
 
+    string getName() const;
     int getHealth() const;
     int getMaxHealth() const;
 

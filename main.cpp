@@ -1,10 +1,12 @@
 ﻿#include <iostream>
+#include <sstream>
 #include <stdexcept>
 #include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
 
 #include "Button.h"
 #include "Characters/Player.h"
+#include "Characters/Enemy.h"
 #include "Weapons/Fists.h"
 
 int main()
@@ -33,13 +35,17 @@ int main()
     sf::Text text(pixelFont);
     text.setCharacterSize(30);
     text.setPosition({700,300});
-    text.setString("Hello.");
-
+    text.setString("Please enter your name.");
+    
     Player player1("Player 1", 300, 300, new Fists());
-    // std::cout << player1;
+    std::ostringstream beginningInfo;
+    beginningInfo << "WELCOME.\n"
+        << (player1);
+    text.setString(beginningInfo.str());
 
     int exploreCount = 0;
     bool enemyActive = false;
+    Enemy* currentEnemy = nullptr;
 
     // Start the game loop
     while (window.isOpen())
@@ -55,9 +61,9 @@ int main()
         button2.setButtonTexture(button2_texture);
 
         // Bottom Button
-        Button button3(960, 828);
-        sf::Texture button3_texture("Assets/MainMenu/buttonV1.png");
-        button3.setButtonTexture(button3_texture);
+        //Button button3(960, 828);
+        //sf::Texture button3_texture("Assets/MainMenu/buttonV1.png");
+        //button3.setButtonTexture(button3_texture);
 
         // Process events
         while (const std::optional event = window.pollEvent())
@@ -75,8 +81,16 @@ int main()
 
                     exploreCount++;
                     if (exploreCount % 3 == 0) {
+                        if (currentEnemy == nullptr) {
+                            currentEnemy = new Enemy("Goblor", 100, 100, new Fists());
+                        }
                         enemyActive = true;
-                        text.setString("An enemy approaches!");
+                        {
+                            std::ostringstream hud;
+                            hud << "An enemy approaches!\n\n"
+                                << (*currentEnemy);
+                            text.setString(hud.str());
+                        }
                     }
                     else {
                         text.setString("You explore the woods \nin front of you.");
@@ -89,18 +103,27 @@ int main()
 
             else if (button2.isClicked(*event, window)) {
                 // attack
-                if (enemyActive) {
-                    enemyActive = false;
-                    text.setString("You attack and defeat the enemy.");
+                if (enemyActive && currentEnemy != nullptr) {
+                    player1.attack(*currentEnemy);
+                    if (currentEnemy->isDead()) {
+                        std::ostringstream hud;
+                        hud << "You attack and defeat\n"
+                            << (currentEnemy->getName()) << ".";
+                        text.setString(hud.str());
+                        delete currentEnemy;
+                        currentEnemy = nullptr;
+                        enemyActive = false;
+                    }
+                    else {
+                        std::ostringstream hud;
+                        hud << "You attack the enemy.\n"
+                            << (*currentEnemy);
+                        text.setString(hud.str());
+                    }
                 }
                 else {
                     text.setString("There is no enemy to attack.");
                 }
-            }
-
-            else if (button3.isClicked(*event, window)) {
-                // change weapon?
-                text.setString("Button 3 Pressed.");
             }
         }
 
@@ -111,9 +134,10 @@ int main()
         window.draw(text);
         window.draw(button1);
         window.draw(button2);
-        window.draw(button3);
 
         // Update the window
         window.display();
     }
+
+    delete currentEnemy;
 }

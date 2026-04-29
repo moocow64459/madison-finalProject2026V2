@@ -31,6 +31,10 @@ bool Character::isDead() const {
     return currentHealth <= 0;
 }
 
+string Character::getName() const {
+    return name;
+}
+
 int Character::getHealth() const {
     return currentHealth;
 }
