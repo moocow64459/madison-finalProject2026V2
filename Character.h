@@ -21,6 +21,7 @@ public:
 
     void attack(Character& target) const;
     virtual int takeDamage(int) = 0;
+    bool isAlive() const;
 
     int getHealth() const;
     int getMaxHealth() const;
