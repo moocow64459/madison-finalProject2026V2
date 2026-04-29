@@ -30,14 +30,13 @@ int main()
     // Text
     sf::Font pixelFont("Assets/Fonts/PublicPixel.ttf");
     sf::Text text(pixelFont);
-    text.setString(std::cout << player1);
 
+    Player player1("Madison", 300, 300, new Fists());
+    std::cout << player1;
 
     // Start the game loop
     while (window.isOpen())
     {
-        Player player1("Madison", 300, 300, new Fists());
-        std::cout << player1;
 
         Button button1(960, 544);
         sf::Texture button1_texture("Assets/MainMenu/buttonV1.png");

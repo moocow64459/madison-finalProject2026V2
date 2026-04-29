@@ -57,6 +57,6 @@ bool Character::operator!=(const Character& other) const {
 
 std::ostream & operator<<(std::ostream &os, const Character &character) {
     os << character.name << "'s Character Info: " << endl;
-    os << "Health: " << character.getHealth() << "/ " << character.getMaxHealth() << endl;
+    os << "Health: " << character.getHealth() << "/" << character.getMaxHealth() << endl;
     return os;
 }
