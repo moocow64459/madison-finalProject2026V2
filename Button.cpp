@@ -22,7 +22,6 @@ bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) {
             sf::Vector2f mousePosF = window.mapPixelToCoords(mousePos);
 
             if (shape.getGlobalBounds().contains(mousePosF)) {
-                std::cout << "Click!";
                 return true;
             }
         }
