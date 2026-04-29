@@ -37,10 +37,20 @@ int main()
     // Start the game loop
     while (window.isOpen())
     {
-
+        // Top Button
         Button button1(960, 544);
         sf::Texture button1_texture("Assets/MainMenu/buttonV1.png");
         button1.setButtonTexture(button1_texture);
+
+        // Middle Button
+        Button button2(960, 686);
+        sf::Texture button2_texture("Assets/MainMenu/buttonV1.png");
+        button2.setButtonTexture(button2_texture);
+
+        // Bottom Button
+        Button button3(960, 828);
+        sf::Texture button3_texture("Assets/MainMenu/buttonV1.png");
+        button3.setButtonTexture(button3_texture);
 
         // Process events
         while (const std::optional event = window.pollEvent())
@@ -58,6 +68,8 @@ int main()
 
         window.draw(background);
         window.draw(button1);
+        window.draw(button2);
+        window.draw(button3);
 
         // Update the window
         window.display();
