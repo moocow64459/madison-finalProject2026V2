@@ -5,7 +5,9 @@ Enemy::Enemy() {
 }
 
 int Enemy::takeDamage(const int damage) {
-    setHealth(currentHealth -= damage);
+    int health = getHealth();
+    health -= damage;
+    setHealth(health);
     return getHealth();
 }
 
