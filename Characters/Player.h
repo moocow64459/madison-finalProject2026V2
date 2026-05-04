@@ -10,7 +10,7 @@ public:
     using Character::Character;
     Player();
 
-    int getXP();
+    int getXP() const;
     void setXP(int);
     int takeDamage(int) override;
 };

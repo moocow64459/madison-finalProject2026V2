@@ -6,7 +6,7 @@ Player::Player() {
     xp = 0;
 }
 
-int Player::getXP() {
+int Player::getXP() const {
     return xp;
 }
 
@@ -18,7 +18,9 @@ void Player::setXP(const int exp){
 }
 
 int Player::takeDamage(const int damage) {
-    setHealth(currentHealth -= damage);
+    int health = getHealth();
+    health -= damage;
+    setHealth(health);
     setXP(getXP()-1);
     return getHealth();
 }
