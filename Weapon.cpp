@@ -45,7 +45,7 @@ void Weapon::setName(const string &name) {
 }
 
 std::ostream & operator<<(std::ostream &os, const Weapon &weapon) {
-    os << weapon.getName() << ": " << endl;
+    os << "Weapon Type: " << weapon.getName() << endl;
     os << "Damage: " << weapon.getMinDamage() << "-" << weapon.getMaxDamage() << endl;
     return os;
 }

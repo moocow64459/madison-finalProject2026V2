@@ -43,9 +43,6 @@ int main()
         << (player1);
     text.setString(beginningInfo.str());
 
-    std::cout << "Min Dmg: " << player1.getWeapon()->getMinDamage();
-    std::cout << "Max Dmg: " << player1.getWeapon()->getMaxDamage();
-
     int exploreCount = 0;
     bool enemyActive = false;
     Enemy* currentEnemy = nullptr;
@@ -137,7 +134,8 @@ int main()
                 Weapon* weapon = (player1.getWeapon());
                 std::ostringstream info;
                 info << player1
-                     << weapon;
+                     << endl
+                     << *weapon;
                 text.setString(info.str());
             }
         }
