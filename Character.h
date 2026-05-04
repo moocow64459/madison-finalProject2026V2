@@ -29,7 +29,6 @@ public:
 
     void setHealth(int);
 
-    bool operator!=(const Character& other) const;
 
     friend std::ostream& operator<<(std::ostream&, const Character&);
 };
