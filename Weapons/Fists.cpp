@@ -2,9 +2,13 @@
 
 #include "../Character.h"
 
+Fists::Fists() : Weapon("Fists") {
+    setMinDamage(3);
+    setMaxDamage(7);
+}
+
 void Fists::attack(Character &target) {
-    // this is where the weapon will deal damage
-    target.takeDamage(randomDamage(fistsDamageMin, fistsDamageMax));
+    target.takeDamage(randomDamage(*this));
 }
 
 //void Fists::defend() {

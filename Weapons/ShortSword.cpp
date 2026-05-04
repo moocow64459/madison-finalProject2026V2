@@ -1,10 +1,13 @@
 ﻿#include "ShortSword.h"
 
 #include "../Character.h"
+ShortSword::ShortSword() : Weapon("Short Sword") {
+    setMinDamage(8);
+    setMaxDamage(12);
+}
 
 void ShortSword::attack(Character &target) {
-    // this is where the weapon will deal damage
-    target.takeDamage(randomDamage(shortSwordDamageMin, shortSwordDamageMax));
+    target.takeDamage(randomDamage(*this));
 }
 
 //void Fists::defend() {

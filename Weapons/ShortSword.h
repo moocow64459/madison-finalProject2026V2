@@ -4,14 +4,10 @@
 
 
 class ShortSword : public Weapon {
-private:
-    int shortSwordDamageMin = 8;
-    int shortSwordDamageMax = 12;
 public:
-    ShortSword() : Weapon("Short Sword") {}
+    ShortSword();
 
     void attack(Character &) override;
-
 };
 
 
