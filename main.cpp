@@ -43,6 +43,9 @@ int main()
         << (player1);
     text.setString(beginningInfo.str());
 
+    std::cout << "Min Dmg: " << player1.getWeapon()->getMinDamage();
+    std::cout << "Max Dmg: " << player1.getWeapon()->getMaxDamage();
+
     int exploreCount = 0;
     bool enemyActive = false;
     Enemy* currentEnemy = nullptr;
@@ -131,14 +134,11 @@ int main()
                 }
             }
             else if (button3.isClicked(*event, window)) {
-                std::ostringstream playerInfo;
-                playerInfo << (player1);
-                text.setString(playerInfo.str());
-
                 Weapon* weapon = (player1.getWeapon());
-                std::ostringstream weaponInfo;
-                weaponInfo << weapon;
-                text.setString(weaponInfo.str());
+                std::ostringstream info;
+                info << player1
+                     << weapon;
+                text.setString(info.str());
             }
         }
 
