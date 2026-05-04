@@ -58,9 +58,9 @@ int main()
     button2.setButtonTexture(button2_texture);
 
     // Bottom Button
-    //Button button3(960, 828);
-    //sf::Texture button3_texture("Assets/MainMenu/buttonV1.png");
-    //button3.setButtonTexture(button3_texture);
+    Button button3(960, 828);
+    sf::Texture button3_texture("Assets/MainMenu/info_button.png");
+    button3.setButtonTexture(button3_texture);
 
     // Start the game loop
     while (window.isOpen())
@@ -139,6 +139,7 @@ int main()
         window.draw(text);
         window.draw(button1);
         window.draw(button2);
+        window.draw(button3);
 
         // Update the window
         window.display();
