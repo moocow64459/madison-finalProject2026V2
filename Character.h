@@ -29,7 +29,7 @@ public:
 
     void setHealth(int);
 
-
+    bool operator>(const Character*) const;
     friend std::ostream& operator<<(std::ostream&, const Character&);
 };
 

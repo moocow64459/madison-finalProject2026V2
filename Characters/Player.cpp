@@ -24,3 +24,7 @@ int Player::takeDamage(const int damage) {
     setXP(getXP()-1);
     return getHealth();
 }
+
+bool Player::isWinner() {
+    return true;
+}

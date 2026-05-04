@@ -110,6 +110,11 @@ int main()
                         hud << "You attack and defeat\n"
                             << (currentEnemy->getName()) << ".";
                         text.setString(hud.str());
+
+                        if (player1 > currentEnemy) {
+                            Player::isWinner();
+                        }
+
                         delete currentEnemy;
                         currentEnemy = nullptr;
                         enemyActive = false;

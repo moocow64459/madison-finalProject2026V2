@@ -13,6 +13,8 @@ public:
     int getXP() const;
     void setXP(int);
     int takeDamage(int) override;
+
+    static bool isWinner();
 };
 
 

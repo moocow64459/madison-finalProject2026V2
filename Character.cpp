@@ -55,6 +55,13 @@ void Character::setHealth(const int health) {
     }
 }
 
+bool Character::operator>(const Character *other) const {
+    if (this->getHealth() > other->getHealth()) {
+        return true;
+    }
+    else return false;
+}
+
 std::ostream & operator<<(std::ostream &os, const Character &character) {
     os << character.name << "'s Character Info: " << endl;
     os << "Health: " << character.getHealth() << "/" << character.getMaxHealth() << endl;
