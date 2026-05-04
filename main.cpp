@@ -130,6 +130,16 @@ int main()
                     text.setString("There is no enemy to attack.");
                 }
             }
+            else if (button3.isClicked(*event, window)) {
+                std::ostringstream playerInfo;
+                playerInfo << (player1);
+                text.setString(playerInfo.str());
+
+                Weapon* weapon = (player1.getWeapon());
+                std::ostringstream weaponInfo;
+                weaponInfo << weapon;
+                text.setString(weaponInfo.str());
+            }
         }
 
         // Clear screen
