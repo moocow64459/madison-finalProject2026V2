@@ -35,6 +35,10 @@ string Character::getName() const {
     return name;
 }
 
+Weapon* Character::getWeapon() const {
+    return weapon;
+}
+
 int Character::getHealth() const {
     return currentHealth;
 }

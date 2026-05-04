@@ -24,6 +24,8 @@ public:
     bool isDead() const;
 
     string getName() const;
+    Weapon *getWeapon() const;
+
     int getHealth() const;
     int getMaxHealth() const;
 
