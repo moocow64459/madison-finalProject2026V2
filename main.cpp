@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <random>
 #include <sstream>
 #include <stdexcept>
 #include <SFML/Audio/Music.hpp>
@@ -8,6 +9,13 @@
 #include "Characters/Player.h"
 #include "Characters/Enemy.h"
 #include "Weapons/Fists.h"
+
+int random(int min, int max) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    uniform_int_distribution distrib(min,max);
+    return distrib(gen);
+}
 
 int main()
 {
@@ -47,6 +55,8 @@ int main()
     bool enemyActive = false;
     Enemy* currentEnemy = nullptr;
 
+    int chanceOfEnemy = random(3, 6);
+
     // Top Button
     Button button1(960, 544);
     sf::Texture button1_texture("Assets/MainMenu/explore_button.png");
@@ -80,7 +90,8 @@ int main()
                     }
 
                     exploreCount++;
-                    if (exploreCount % 3 == 0) {
+
+                    if (exploreCount >= chanceOfEnemy) {
                         if (currentEnemy == nullptr) {
                             currentEnemy = new Enemy("Goblor", 100, 100, new Fists());
                         }
@@ -91,6 +102,7 @@ int main()
                                 << (*currentEnemy);
                             text.setString(hud.str());
                         }
+                        exploreCount = 0;   // reset for if block to work
                     }
                     else {
                         text.setString("You explore the woods \nin front of you.");
